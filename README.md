@@ -1,14 +1,76 @@
-# Java Project Practice Run
+# Text Analysis Exercise
 
-Welcome to your first Java programming assignment.
+A little exercise to parse text from a text file in Java.
 
-## The goal
+## Background
 
-The goal of this assignment is to introduce you to the work environment you will use to complete assignments in this course.
+You work evenings as an unpaid intern in a historical semantics research institute. Your boss, an absent-minded computer-illiterate professor of linguistics (a vestige from a bygone era), would like you to build a program to analyze the frequency of [verbal tics](http://www.newser.com/story/131668/speech-habits-of-psychopaths-analyzed-in-study.html) in historical recorded speech.
+
+The institute has hired a [Hyderabad, India](https://en.wikipedia.org/wiki/Hyderabad,_India)-based firm to convert the recorded [speech into text](https://en.wikipedia.org/wiki/Speech_recognition). Now you need to be able to take these text transcripts and analyze them for verbal tics.
+
+## The program
+
+The program must be able to open any text file specified by the user, and analyze the frequency of verbal ticks in the text. Since there are many different kinds of verbal ticks (such as "`like`", "`uh`", "`um`", "`you know`", etc) the program must ask the user what ticks to look for. A user can enter multiple ticks, separated by commas - any spaces entered by the user before or after each tic must be ignored.
+
+The program should output:
+*the total number of tics found in the text
+*the density of tics (proportion of all words in the text that are tics)
+*the frequency of each of the verbal tics
+*the percentage that each tic represents out of all the total number of tics
+
+## Example input and output
+
+This example shows suggested input/output of such a program. User responses are shown with "`>`" in front of them for your convenience, although this character should not be output by the program or entered by the user. Data analysis numbers are placeholder only and are not meant to be '_real_'.
+
+```
+What file would you like to open?
+> Resemble_Jammed_Inauguration_Speech.txt
+What words would you like to search for?
+> uh, like, um, you know, so'''
+
+...............................Analyzing text.................................
+
+Total number of tics: 66
+Density of tics: 0.2
+
+...............................Tic breakdown..................................
+
+uh        /  19 occurrences  /  21% of all tics
+like      /  17 occurrences  /   6% of all tics
+um        /  22 occurrences  /  21% of all tics
+you know  /  63 occurrences  /  32% of all tics
+so        /  18 occurrences  /  20% of all tics
+```
+
+## Requirements
+
+- The program must be able to analyze any text file, but an example file must be included in the submission.
+- The user must be able to enter as many tics as they would like, separated by commas, with or without spaces.
+- Those tics can either be single words, such as "uh" and "like", or multi-word such as "uh huh" and "you know" - the code must accommodate these as well.
+- The list of tics entered by the user must be stored in an array, not an ArrayList or any other array-like data structure.
+- You must use separate methods for each component of the analysis. At the least, this includes:
+  1. opening the file and importing its contents.
+  2. soliciting tic words or phrases from the user and separating them.
+  3. counting the occurrences of each tic.
+  4. calculating the percent of all tics that each tic consumes.
+  5. calculating tic density.
+- The output must be formatted so that all output lines up nicely as in the example.
+- The search for tics must be case insensitive.
+- round all occurrences and percentages to the nearest integer.
+- round the density to two decimal places.
+
+## Hint
+
+You _may_ find it useful to split strings by more than one separator.
+
+```java
+String someText = "this;text,has-various?separators+in!it";
+String[] values = someText.split("[.,?!-]+"); // an array of the parts of the String separated by any of the indicated separators
+```
 
 ### Folder structure
 
-Each Java project will have several important directories:
+This project has several important directories:
 
 - `src` - contains the Java source code for the project (i.e. `.java` files)
 - `test` - contains code that will help us determine whether the code you have written works correctly. Do not touch this directory!
@@ -19,7 +81,7 @@ If your project has no dependencies and has not been compiled, you may not see t
 
 ### How to test your work
 
-Automated tests that can help determine whether you have done the work correctly have been included within the `test` directory. Use them as follows:
+Automated tests that can help determine whether you have done the work correctly have been included within the `test` directory. Use them as follows. A [video tutorial](https://www.youtube.com/watch?v=Af6Ka0Bmflo) shows how to do this and overcome any problems:
 
 - Click the Run and Debug icon in the Visual Studio Code activity bar, then click the play button to run your code without using the automated tests. Do this prior to running the tests to make sure your program seems to behave correctly yourself.
 - Open the relevant test file, located within the `test` directory.
