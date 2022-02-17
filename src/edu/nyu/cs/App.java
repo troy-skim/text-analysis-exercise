@@ -30,45 +30,6 @@ public class App {
 
     // complete this function according to the instructions
 
-    // open the file the user indicates
-    String filepath = getFilepathFromUser();
-    String fullText = getContentsOfFile(filepath);
-
-    // get the tics and analyze them
-    String[] tics = getTicsFromUser();
-
-    int[] occurrences = new int[tics.length];
-    int[] percentages = new int[tics.length];
-    int totalTicOccurrences = 0;
-
-    // count occurrences for each tic
-    for (int i=0; i<tics.length; i++) {
-      String tic = tics[i];
-      occurrences[i] = countOccurrences(tic, fullText); // case insensitive count
-      totalTicOccurrences += occurrences[i];
-    }
-
-    // calculate percentage of all tics that each tic represents
-    for (int i=0; i<tics.length; i++) {
-      percentages[i] = calculatePercentage(occurrences[i], totalTicOccurrences); // case insensitive count
-    }
-
-    // calculate tic density - the proportion of all words in the text that are tics
-    double density = calculateTicDensity(tics, fullText);
-    String strDensity = String.format("%.2f", density); // limit to two decimal places
-
-    // output results
-    System.out.println("\n...............................Analyzing text.................................\n");
-    System.out.println("Total number of tics: " + totalTicOccurrences);
-    System.out.println("Density of tics: " + strDensity);
-    System.out.println("\n...............................Tic breakdown..................................\n");
-    for (int i=0; i<tics.length; i++) {
-      String tic = String.format("%-9s", tics[i]);
-      String occurrence = String.format("%-18s", occurrences[i] + " occurrences");
-      String percentage = percentages[i] + "% of all tics";
-      System.out.println(tic + " / " + occurrence + " / " + percentage );
-    }
-
   }
 
   /**
@@ -82,9 +43,6 @@ public class App {
 
     // complete this function according to the instructions
 
-    System.out.println("What file would you like to open?"); 
-    String filepath = scn.nextLine(); 
-    return filepath;
   }
 
 
@@ -128,14 +86,6 @@ public class App {
 
     // complete this function according to the instructions
 
-    String[] tics;
-    System.out.println("Please enter a comma-separated list of tics to analyze:");
-    String response = scn.nextLine();
-    tics = response.split(","); // split comma-separated string into an array
-    for (int i=0; i<tics.length; i++) {
-      tics[i] = tics[i].trim(); // remove leading/trailing whitespace
-    }
-    return tics; // return the array of tics
   }
 
  /**
@@ -148,26 +98,6 @@ public class App {
 
     // complete this function according to the instructions
 
-    // convet to lowercase
-    needle = needle.toLowerCase();
-    haystack = haystack.toLowerCase();
-
-    int occurrences = 0;
-    int startingPosition = 0;
-    boolean keepGoing = true;
-    // keep looping until we don't find the needle in the haystack anymore
-    while (keepGoing) {
-      int foundAtPosition = haystack.indexOf(needle, startingPosition);
-      if (foundAtPosition == -1) {
-        keepGoing = false;
-      }
-      else {
-        occurrences++;
-        startingPosition = foundAtPosition + 1;
-      }
-    }
-
-    return occurrences;
   }
 
   /**
@@ -180,8 +110,6 @@ public class App {
 
     // complete this function according to the instructions
 
-    int percentage = (int) Math.round(100.0 * num1 / num2);
-    return percentage;
   }
 
   /**
@@ -198,19 +126,6 @@ public class App {
 
     // complete this function according to the instructions
 
-    // get the total number of occurrences of all tics
-    int totalTicOccurrences = 0;
-    for (String tic : tics) {
-      totalTicOccurrences += countOccurrences(tic, fullText);
-    }
-
-    // get the total number of words in the text
-    String[] words = fullText.split("[ \n\t.,?!]");
-    int totalWordsInText = words.length;
-
-    // calculate "density" - the proportion of tics to words
-    double density = 1.0 * totalTicOccurrences / totalWordsInText;
-    return density;
   }
 
 
