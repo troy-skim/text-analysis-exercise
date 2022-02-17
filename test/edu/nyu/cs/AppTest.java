@@ -20,7 +20,7 @@ public class AppTest {
         try {
             App.main(args);
             String actual = systemOutRule.getLogWithNormalizedLineSeparator();
-            String expected = "Hello world!\n";
+            String expected = "Test files will be released at a later date. See if you can write the program without them.\n";
             assertEquals(expected, actual);
         }
         catch (Exception e) {
