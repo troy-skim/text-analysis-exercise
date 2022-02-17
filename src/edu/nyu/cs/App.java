@@ -33,6 +33,7 @@ public class App {
   }
 
   /**
+   * getFilepathFromUser method
    * Asks the user to enter the path to the text file they want to analyze.
    * Hint:
    *  - use the "global"-ish Scanner variable scn to get the response from the user, rather than creating a new Scanner variable ithin this function.
@@ -41,13 +42,13 @@ public class App {
    */
   public static String getFilepathFromUser() {
 
-    // complete this function according to the instructions
+    // complete the getFilepathFromUser function according to the instructions above
 
   }
 
 
   /**
-   * 
+   * getContentsOfFile method
    * Opens the specified file and returns the text therein.
    * If the file can't be opened, print out the message, "Oh no... can't find the file!"
    * @param filename The path to a text file containing a speech transcript with verbal tics in it.
@@ -76,57 +77,52 @@ public class App {
   }
   
  /**
+   * getTicsFromUser method
    * Asks the user to enter a comma-separated list of tics, e.g. "uh,like, um, you know,so", and returns an array containing those tics, e.g. { "uh", "like", "um", "you know", "so" }.
    * Hint:
    *  - use the "global"-ish Scanner variable scn to get the response from the user, rather than creating a new Scanner variable ithin this function.
    *  - do not close the "global"-ish Scanner so that you can use it in other functions
    * @return A String array containing each of the tics to analyze, with any leading or trailing whitespace removed from each tic.
    */
-  public static String[] getTicsFromUser() {
 
-    // complete this function according to the instructions
+    // write the getTicsFromUser function according to the instructions
 
-  }
 
  /**
+   * countOccurrences method
    * Counts how many times a given string (the needle) occurs within another string (the haystack), ignoring case.
    * @param needle The String to search for.
    * @param haystack The String within which to search.
    * @return THe number of occurrences of the "needle" String within the "haystack" String, ignoring case.
    */
-  public static int countOccurrences(String needle, String haystack) {
 
-    // complete this function according to the instructions
-
-  }
+    // write the countOccurrences function according to the instructions
 
   /**
+   * calculatePercentage method
    * Calculates the equivalent percentage from the proportion of one number to another number.
    * @param num1 The number to be converted to a percentage.  i.e. the numerator in the ratio of num1 to num2.
    * @param num2 The overall number out of which the num1 number is taken.  i.e. the denominator in the ratio of num1 to num2.
    * @return The percentage that rum1 represents out of the total of num2, rounded to the nearest integer.
    */
-  public static int calculatePercentage(int num1, int num2) {
 
-    // complete this function according to the instructions
+    // write the calculatePercentage function according to the instructions above
 
-  }
 
   /**
+   * calculateTicDensity method
    * Calculates the "density" of tics in the text.  In other words, the proportion of tic words to the total number of words in a text.
    * Hint:
    *  - assume that words in the text are separated from one another by any of the following characters: space ( ), line break (\n), tab (\t), period (.), comma (,), question mark (?), or exclamation mark (!)
    *  - all Strings have a .split() method which can split by any of a collection of characters given as an argument;  This function returns an array of the remaining text that was separated by any of those characters
-   *  - e.g. "foo-bar;baz.bum".split([-;.]) will result in an array with { "foo", "bar", "baz", and "bum" } as the values.
+   *  - e.g. "foo-bar;baz.bum".split("[-;.]+") will result in an array with { "foo", "bar", "baz", and "bum" } as the values.
    * @param tics An array of tic words to analyze.
    * @param fullText The full text.
    * @return The proportion of the number of tic words present in the text to the total number of words in the text, as a double.
    */
-  public static double calculateTicDensity(String[] tics, String fullText) {
 
-    // complete this function according to the instructions
+    // write the calculateTicDensity function according to the instructions above
 
-  }
-
+    
 
 } // end of class
