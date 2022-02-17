@@ -179,7 +179,7 @@ public class AppTest {
     @Test
     public void testMain() {
         try {
-            assertEquals("Expecting your main method to be automatically tested and judged for correctness?", "We will evaluate the correctness of your main method and grade it manually once you submit the assignment!  In the meantime, make sure you have followed the instructions.");
+            assertEquals("Expecting your main method to be automatically tested and judged for correctness?", "We will evaluate the correctness of your main method and grade it manually once you submit the assignment!  In the meantime, make sure you have followed the instructions.  Ignore this failing test.");
         }
         catch (Exception e) {
             assertEquals("Expected your main() function not to crash when run.", "It crashed. Try it yourself!");
