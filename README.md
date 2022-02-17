@@ -25,7 +25,7 @@ This example shows suggested input/output of such a program. User responses are 
 
 ```
 What file would you like to open?
-> Resemble_Jammed_Inauguration_Speech.txt
+> data/trump_speech_010621.txt
 What words would you like to search for?
 > uh,like, um, you know,so
 
@@ -60,7 +60,7 @@ so        / 138 occurrences    / 50% of all tics
   - the tic word column consumes 10 spaces
   - the number of occurrences column consumes 20 spaces
   - the percentage column consumes as much space as necessary
-  - columns are separated by the `/` characters - note that the text in any column should always be separated one space away from this separator - see example output
+  - columns are separated by the `/` characters - note that the text within any column should always be separated one space away from this separator - see example output
 - The search for tics must be case insensitive.
 - round all occurrences and percentages to the nearest integer.
 - limit the density to two decimal places.
