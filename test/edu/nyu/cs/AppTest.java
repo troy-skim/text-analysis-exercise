@@ -66,9 +66,9 @@ public class AppTest {
                     assertEquals("Expected the getTicsFromUser() function to return an array of " + expected.length + " tics, given the input: " + mockInput, "Returned an array of " + actual.length + " instead");
                     return;
                 }
-                for (i=0; i<expected.length; i++) {
-                    if (!(expected[i].equals(actual[i]))) {
-                        assertEquals("Expected the getTicsFromUser() function to return an array including the string " + expected[i] + " at position " + i + ", given the input: " + mockInput, "Returned an array with the string " + actual[i] + " at position " + i + " instead.");
+                for (int j=0; j<expected.length; j++) {
+                    if (!(expected[j].equals(actual[j]))) {
+                        assertEquals("Expected the getTicsFromUser() function to return an array including the string " + expected[j] + " at position " + j + ", given the input: " + mockInput, "Returned an array with the string " + actual[j] + " at position " + j + " instead.");
                         return;
                     }
                 }
