@@ -4,6 +4,7 @@ package edu.nyu.cs;
 // import junit 4 testing framework
 import org.junit.Test;
 import org.junit.Before;
+import org.junit.ClassRule;
 import org.junit.Rule;
 import static org.junit.Assert.*;
 import org.junit.contrib.java.lang.system.SystemOutRule; // system rules lib - useful for capturing system output
@@ -15,8 +16,8 @@ import java.util.Arrays;
 
 public class AppTest {
 
-    @Rule
-    public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
+    @ClassRule
+    public static final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
 
     @Rule
     public final SystemOutRule systemOutRule = new SystemOutRule();
