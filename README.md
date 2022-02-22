@@ -10,7 +10,7 @@ The institute has hired a [Hyderabad, India](https://en.wikipedia.org/wiki/Hyder
 
 ## The program
 
-The program must be able to open any text file specified by the user, and analyze the frequency of verbal tics in the text. Since there are many different kinds of verbal tics (such as "`like`", "`uh`", "`um`", "`you know`", etc) the program must ask the user what tics to look for. A user can enter multiple tics, separated by commas - any spaces entered by the user before or after each tic must be ignored.
+The program must be able to open any text file specified by the user, and analyze the frequency of verbal tics in the text. Since there are many different kinds of verbal tics (such as "`like`", "`uh`", "`um`", etc) the program must ask the user what tics to look for. A user can enter multiple tics, separated by commas - any spaces entered by the user before or after each tic must be ignored. You can assume all tics are single words.
 
 The program should output:
 
@@ -27,7 +27,7 @@ This example shows suggested input/output of such a program. User responses are 
 What file would you like to open?
 > data/trump_speech_010621.txt
 What words would you like to search for?
-> uh,like, um, you know,so
+> uh,like, um,so
 
 ...............................Analyzing text.................................
 
@@ -39,7 +39,6 @@ Density of tics: 0.2
 uh        / 0 occurrences      / 0% of all tics
 like      / 33 occurrences     / 12% of all tics
 um        / 63 occurrences     / 23% of all tics
-you know  / 41 occurrences     / 15% of all tics
 so        / 138 occurrences    / 50% of all tics
 ```
 
@@ -47,7 +46,7 @@ so        / 138 occurrences    / 50% of all tics
 
 - The program must be able to analyze any text file, but an example file must be included in the submission.
 - The user must be able to enter as many tics as they would like, separated by commas, with or without spaces.
-- Those tics can either be single words, such as "uh" and "like", or multi-word such as "uh huh" and "you know" - the code must accommodate these as well.
+- Those tics can be assumed to be single words, such as "uh" and "like", and not multi-word tics such as "uh huh" and "you know".
 - The list of tics entered by the user must be stored in an array, not an ArrayList or any other array-like data structure.
 - You must use separate methods for each component of the analysis. At the least, this includes:
   1. asking the user which text file to open.
