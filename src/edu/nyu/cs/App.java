@@ -45,7 +45,7 @@ public class App {
     System.out.println("Density of tics: "+density);
     System.out.println("\n...............................Tic breakdown..................................\n");
     for (int j=0; j<tics.length; j++) {
-      System.out.println(String.format("%10s", tics[j].toLowerCase())+"/ "+ String.format("$19s", countOccurrences(tics[j], fullText)+" occurrences") + "/ "+calculatePercentage(countOccurrences(tics[j], fullText), count)+"% of all tics");
+      System.out.println(String.format("%-10s", tics[j].toLowerCase())+"/ "+String.format("%-19s", countOccurrences(tics[j], fullText)+" occurrences")+"/ "+calculatePercentage(countOccurrences(tics[j], fullText), count)+"% of all tics");
     }
   }
 
